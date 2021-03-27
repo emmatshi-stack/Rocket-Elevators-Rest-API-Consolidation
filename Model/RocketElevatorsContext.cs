@@ -34,7 +34,7 @@ namespace buildingapi.Model
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySQL("Server=localhost;port=3306;Database=Rocket-Elevators;uid=root;password=emmanuel");
+                optionsBuilder.UseMySQL("server=codeboxx.cq6zrczewpu2.us-east-1.rds.amazonaws.com;port=3306;database=emmanueltshibangu;uid=codeboxx;password=Codeboxx1!");
             }
         }
 

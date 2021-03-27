@@ -96,3 +96,10 @@ C:\Users\tshib\OneDrive\Desktop\fifi\Rocket-Elevators-Rest-API-Consolidation\obj
 C:\Users\tshib\OneDrive\Desktop\fifi\Rocket-Elevators-Rest-API-Consolidation\obj\Debug\net5.0\ref\buildingapi.dll
 C:\Users\tshib\OneDrive\Desktop\fifi\Rocket-Elevators-Rest-API-Consolidation\obj\Debug\net5.0\buildingapi.pdb
 C:\Users\tshib\OneDrive\Desktop\fifi\Rocket-Elevators-Rest-API-Consolidation\obj\Debug\net5.0\buildingapi.genruntimeconfig.cache
+C:\Users\tshib\OneDrive\Desktop\fifi\Rocket-Elevators-Rest-API-Consolidation\bin\Debug\net5.0\publish\web.config
+C:\Users\tshib\OneDrive\Desktop\fifi\Rocket-Elevators-Rest-API-Consolidation\bin\Debug\net5.0\publish\appsettings.Development.json
+C:\Users\tshib\OneDrive\Desktop\fifi\Rocket-Elevators-Rest-API-Consolidation\bin\Debug\net5.0\publish\appsettings.json
+C:\Users\tshib\OneDrive\Desktop\fifi\Rocket-Elevators-Rest-API-Consolidation\bin\Debug\net5.0\publish\buildingapi.deps.json
+C:\Users\tshib\OneDrive\Desktop\fifi\Rocket-Elevators-Rest-API-Consolidation\bin\Debug\net5.0\publish\buildingapi.runtimeconfig.json
+C:\Users\tshib\OneDrive\Desktop\fifi\Rocket-Elevators-Rest-API-Consolidation\bin\Debug\net5.0\host.json
+C:\Users\tshib\OneDrive\Desktop\fifi\Rocket-Elevators-Rest-API-Consolidation\bin\Debug\net5.0\local.settings.json
