@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tshib\\OneDrive\\Desktop\\finalapi\\buildingapi\\buildingapi.csproj": {}
+    "C:\\Users\\tshib\\OneDrive\\Desktop\\fifi\\Rocket-Elevators-Rest-API-Consolidation\\buildingapi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tshib\\OneDrive\\Desktop\\finalapi\\buildingapi\\buildingapi.csproj": {
+    "C:\\Users\\tshib\\OneDrive\\Desktop\\fifi\\Rocket-Elevators-Rest-API-Consolidation\\buildingapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tshib\\OneDrive\\Desktop\\finalapi\\buildingapi\\buildingapi.csproj",
+        "projectUniqueName": "C:\\Users\\tshib\\OneDrive\\Desktop\\fifi\\Rocket-Elevators-Rest-API-Consolidation\\buildingapi.csproj",
         "projectName": "buildingapi",
-        "projectPath": "C:\\Users\\tshib\\OneDrive\\Desktop\\finalapi\\buildingapi\\buildingapi.csproj",
+        "projectPath": "C:\\Users\\tshib\\OneDrive\\Desktop\\fifi\\Rocket-Elevators-Rest-API-Consolidation\\buildingapi.csproj",
         "packagesPath": "C:\\Users\\tshib\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tshib\\OneDrive\\Desktop\\finalapi\\buildingapi\\obj\\",
+        "outputPath": "C:\\Users\\tshib\\OneDrive\\Desktop\\fifi\\Rocket-Elevators-Rest-API-Consolidation\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tshib\\AppData\\Roaming\\NuGet\\NuGet.Config",
