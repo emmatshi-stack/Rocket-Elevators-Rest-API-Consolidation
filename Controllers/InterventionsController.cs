@@ -13,9 +13,9 @@ namespace RocketElevatorsApi.Controllers
     [ApiController]
     public class interventionsController : ControllerBase
     {
-        private readonly RocketElevatorsContext _context;
+        private readonly emmanueltshibanguContext _context;
 
-        public interventionsController(RocketElevatorsContext context)
+        public interventionsController(emmanueltshibanguContext context)
         {
             _context = context;
         }

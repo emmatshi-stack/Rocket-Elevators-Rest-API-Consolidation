@@ -13,9 +13,9 @@ namespace buildingapi.Controllers
     [Route("[controller]")]
     public class columnsController : ControllerBase
     {
-        private readonly RocketElevatorsContext _context;
+        private readonly emmanueltshibanguContext _context;
 
-        public columnsController(RocketElevatorsContext context)
+        public columnsController(emmanueltshibanguContext context)
         {
             _context = context;
         }

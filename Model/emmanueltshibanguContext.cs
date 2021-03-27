@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace buildingapi.Model
 {
-    public partial class RocketElevatorsContext : DbContext
+    public partial class emmanueltshibanguContext : DbContext
     {
-        public RocketElevatorsContext()
+        public emmanueltshibanguContext()
         {
         }
 
-        public RocketElevatorsContext(DbContextOptions<RocketElevatorsContext> options)
+        public emmanueltshibanguContext(DbContextOptions<emmanueltshibanguContext> options)
             : base(options)
         {
         }
@@ -34,6 +34,7 @@ namespace buildingapi.Model
         {
             if (!optionsBuilder.IsConfigured)
             {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseMySQL("server=codeboxx.cq6zrczewpu2.us-east-1.rds.amazonaws.com;port=3306;database=emmanueltshibangu;uid=codeboxx;password=Codeboxx1!");
             }
         }

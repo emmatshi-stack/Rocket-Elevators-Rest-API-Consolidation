@@ -13,9 +13,9 @@ namespace buildingapi.Controllers
     [Route("[controller]")]
     public class LeadsController : ControllerBase
     {
-        private readonly RocketElevatorsContext _context;
+        private readonly emmanueltshibanguContext _context;
 
-        public LeadsController(RocketElevatorsContext context)
+        public LeadsController(emmanueltshibanguContext context)
         {
             _context = context;
         }

@@ -32,7 +32,7 @@ namespace buildingapi
 
  services.AddCors();
 
-            services.AddDbContext<RocketElevatorsContext>(options =>
+            services.AddDbContext<emmanueltshibanguContext>(options =>
             options.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddControllers();

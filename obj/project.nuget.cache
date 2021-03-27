@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BMh6IJ0Qlg6ynsuXEjaq4vUNtTKSu38rv/A4FYxRrS2Bs7lD9DtQPHQiXJOKlC304UAs1jJyTA/JV27BhXZo1w==",
+  "dgSpecHash": "nlzsGjn29X6CvTBAiAcZKBiATnyYO4NhY/1jaBGpUwO5BhX5PVKF9zrOnS6uqTgZJ1dH4ES5n9hy47+hRrwkRw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tshib\\OneDrive\\Desktop\\fifi\\Rocket-Elevators-Rest-API-Consolidation\\buildingapi.csproj",
+  "projectFilePath": "C:\\Users\\tshib\\OneDrive\\Desktop\\finalapi\\buildingapi\\buildingapi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tshib\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\tshib\\.nuget\\packages\\google.protobuf\\3.11.4\\google.protobuf.3.11.4.nupkg.sha512",
