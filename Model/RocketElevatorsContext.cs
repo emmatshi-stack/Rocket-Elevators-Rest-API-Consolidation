@@ -35,7 +35,6 @@ namespace buildingapi.Model
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseMySQL("server=codeboxx.cq6zrczewpu2.us-east-1.rds.amazonaws.com;port=3306;database=emmanueltshibangu;uid=codeboxx;password=Codeboxx1!");
-                
             }
         }
 
