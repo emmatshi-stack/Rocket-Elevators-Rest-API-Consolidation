@@ -22,10 +22,33 @@ namespace buildingapi.Controllers
 
         // getting the list of all batteries
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Batteries>>> Getbatteries()
+        public async Task<ActionResult<IEnumerable<Customers>>> Getbatteries()
         {
-            return await _context.Batteries.ToListAsync();
+            return await _context.Customers.ToListAsync();
         }
+
+        [HttpGet("{email}")]
+        public async Task<ActionResult<IEnumerable<Customers>>> GetbatteriesByEmail(string email)
+        {
+            if (await _context.Customers.Where(b => b.CpyContactEmail == email).ToListAsync() == null)
+            {
+                return NotFound();
+            }
+            else{
+                return  await _context.Customers.Where(b => b.CpyContactEmail == email).ToListAsync();
+            }
+           
+            
+        }
+
+        // [HttpGet("{email}")]
+        // public async Task<ActionResult<IEnumerable<Customers>>> GetbatteriesByEmail(string email)
+        // {
+        //     var emailREturn = await _context.Customers.Where(b => b.CpyContactEmail == email).ToListAsync();
+           
+        //     return  await _context.Customers.Where(b => b.CpyContactEmail == email).ToListAsync();
+            
+        // }
 
         
         

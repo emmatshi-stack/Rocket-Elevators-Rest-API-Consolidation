@@ -23,11 +23,21 @@ namespace buildingapi.Controllers
         }
 
         // getting the list of all buildings
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Buildings>>> Getbuildings()
+        [HttpGet("{cid}/net")]
+        public async Task<ActionResult<IEnumerable<Buildings>>> Getbuildings(long cid)
         {
-            return await _context.Buildings.ToListAsync();
+            var build = await _context.Buildings.Where(b => b.CustomerId == cid).ToListAsync();
+            if (build == null)
+            {
+                return NotFound();
+            }
+
+            return build;
+        
         }
+       
+        
+
         
         
         // 

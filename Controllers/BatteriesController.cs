@@ -21,26 +21,33 @@ namespace buildingapi.Controllers
         }
 
         // getting the list of all batteries
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Batteries>>> Getbatteries()
+        [HttpGet("{cid}")]
+        public async Task<ActionResult<IEnumerable<Batteries>>> GetBatteries(long cid)
+        
         {
-            return await _context.Batteries.ToListAsync();
-        }
-
-        // Getting the status of a particular battery 
-        [HttpGet("{id}/status")]
-        public async Task<ActionResult<string>> GetbatteryStatus(long Id)
-        {
-            var bat = await _context.Batteries.FindAsync(Id);
-
-            if (bat == null)
+            var batt = await _context.Batteries.Where(bat => bat.BuildingId == cid).ToListAsync();
+            if (batt == null)
             {
                 return NotFound();
             }
 
-            return bat.Status;
-
+            return batt;
         }
+
+        //Getting the status of a particular battery 
+        // [HttpGet("{id}/status")]
+        // public async Task<ActionResult<string>> GetbatteryStatus(long Id)
+        // {
+        //     var bat = await _context.Batteries.FindAsync(Id);
+
+        //     if (bat == null)
+        //     {
+        //         return NotFound();
+        //     }
+
+        //     return bat;
+
+        // }
         // PUT: upadating the status of a particular battery
         [HttpPut("{id}/updatestatus")]
         public async Task<IActionResult> PutmodifBatterySatus(long Id, string Status)
@@ -65,31 +72,12 @@ namespace buildingapi.Controllers
                 {
                     throw;
                 }
-            }
-            return NoContent();
+            }return NoContent();
         }
         private bool BatteriesExists(long id)
         {
             return _context.Batteries.Any(e => e.Id == id);
-        }
-
-
-       
-        // Getting a particular battery using his Id
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Batteries>> Getbatteries(long Id)
-        {
-            var bat = await _context.Batteries.FindAsync(Id);
-
-            if (bat == null)
-            {
-                return NotFound();
-            }
-
-            return bat;
-        }
-        
-        
+        }       
         
         
          

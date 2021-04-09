@@ -22,24 +22,24 @@ namespace buildingapi.Controllers
 
 
         // Retrieving of a list of columns
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Columns>>> Getcolumns()
+        [HttpGet("{id}")]
+        public async Task<ActionResult<IEnumerable<Columns>>> Getcolumns(long id)
         {
-            return await _context.Columns.ToListAsync();
+            return await _context.Columns.Where(b => b.BatteryId == id).ToListAsync();
         }
 
-        // Retrieving of a specific Column using the id
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Columns>> Getcolumns(long id)
-        {
-            var column = await _context.Columns.FindAsync(id);
+        //Retrieving of a specific Column using the id
+        [HttpGet("{id}/net")]
+        public async Task<ActionResult<Columns>> GetColumns(long id)
 
-            if (column == null)
+        {
+            var build = await _context.Columns.Where(b => b.BatteryId == id).ToListAsync();
+            if (build == null)
             {
                 return NotFound();
             }
 
-            return column;
+            return  new OkObjectResult("success");
         }
 
        

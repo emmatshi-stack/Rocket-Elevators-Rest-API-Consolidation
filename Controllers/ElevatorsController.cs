@@ -21,16 +21,17 @@ namespace buildingapi.Controllers
         }
 
         // Retrieving of a list of Elevators
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Elevators>>> Getelevators()
+        [HttpGet("{id}/net")]
+        public async Task<ActionResult<IEnumerable<Elevators>>> Getelevators(long id)
         {
-            return await _context.Elevators.ToListAsync();
+            return await _context.Elevators.Where(b => b.ColumnId == id).ToListAsync();
         }
 
         // Retrieving of a specific Elevators using the id
         [HttpGet("{id}")]
         public async Task<ActionResult<Elevators>> GetelevatorsById(long id)
         {
+            
             var elevators = await _context.Elevators.FindAsync(id);
 
             if (elevators == null)

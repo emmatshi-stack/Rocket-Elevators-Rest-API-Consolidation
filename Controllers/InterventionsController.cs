@@ -132,5 +132,33 @@ namespace RocketElevatorsApi.Controllers
         {
             return _context.Interventions.Any(e => e.Id == id);
         }
+        [HttpPost]
+        public async Task<IActionResult> PostNewStudent([FromBody]Interventions student)
+        {
+            if (student == null)
+            {
+                return BadRequest();
+            };
+
+            using (var ctx = new emmanueltshibanguContext())
+            {
+                ctx.Interventions.Add(new Interventions()
+                {
+                    BuildingId = student.BuildingId,
+                    BatteryId = student.BatteryId,
+                    ColumnId = student.ColumnId,
+                    ElevatorId = student.ElevatorId,
+                   
+                });
+                ctx.SaveChanges();
+                
+                
+            }
+
+            return Ok();
+        }
+
+      
+    
     }
 }
