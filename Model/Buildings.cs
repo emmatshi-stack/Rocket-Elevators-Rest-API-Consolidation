@@ -8,7 +8,7 @@ namespace buildingapi.Model
         public Buildings()
         {
             Addresses = new HashSet<Addresses>();
-            Batteries = new HashSet<Batteries>();
+           // Batteries = new HashSet<Batteries>();
             BuildingDetails = new HashSet<BuildingDetails>();
             Interventions = new HashSet<Interventions>();
         }

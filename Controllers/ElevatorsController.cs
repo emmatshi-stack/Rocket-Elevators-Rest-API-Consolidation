@@ -19,6 +19,11 @@ namespace buildingapi.Controllers
         {
             _context = context;
         }
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Elevators>>> Getcklolumns(long id)
+        {
+            return await _context.Elevators.ToListAsync();;
+        }
 
         // Retrieving of a list of Elevators
         [HttpGet("{id}/net")]

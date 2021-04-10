@@ -22,7 +22,7 @@ namespace buildingapi.Model
         public long? BuildingId { get; set; }
         public long? EmployeeId { get; set; }
 
-        public virtual Buildings Building { get; set; }
+         public virtual Buildings Building { get; set; }
         public virtual Employees Employee { get; set; }
         public virtual ICollection<Columns> Columns { get; set; }
         public virtual ICollection<Interventions> Interventions { get; set; }

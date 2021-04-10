@@ -41,6 +41,46 @@ namespace buildingapi.Controllers
             
         }
 
+        [HttpPost("update")]
+        public async Task<IActionResult> PutmodifyCustomer(Customers cust)
+        {
+            
+            if (cust == null)
+            {
+                return BadRequest();
+            }
+            var cus = await _context.Customers.FindAsync(cust.Id);
+
+            cus.CpyContactFullName = cust.CpyContactFullName;
+            cus.CpyContactPhone = cust.CpyContactPhone;
+            cus.CpyContactEmail = cust.CpyContactEmail;
+            cus.TechManagerServiceEmail = cust.TechManagerServiceEmail;
+           
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!AddressesExists(cust.Id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+        private bool AddressesExists(long id)
+        {
+            return _context.Elevators.Any(e => e.Id == id);
+        }
+
         // [HttpGet("{email}")]
         // public async Task<ActionResult<IEnumerable<Customers>>> GetbatteriesByEmail(string email)
         // {
