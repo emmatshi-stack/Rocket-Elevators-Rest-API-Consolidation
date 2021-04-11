@@ -135,26 +135,35 @@ namespace RocketElevatorsApi.Controllers
         [HttpPost]
         public async Task<IActionResult> PostNewStudent([FromBody]Interventions student)
         {
-            if (student == null)
-            {
-                return BadRequest();
-            };
-
-            using (var ctx = new emmanueltshibanguContext())
-            {
-                ctx.Interventions.Add(new Interventions()
+            try{
+                if (student == null)
                 {
-                    BuildingId = student.BuildingId,
-                    BatteryId = student.BatteryId,
-                    ColumnId = student.ColumnId,
-                    ElevatorId = student.ElevatorId,
-                   
-                });
-                ctx.SaveChanges();
-                
-                
-            }
+                    return BadRequest();
+                };
 
+                using (var ctx = new emmanueltshibanguContext())
+                {
+                    ctx.Interventions.Add(new Interventions()
+                    {
+                        Reports = student.Reports,
+                        Author = student.Author,
+                        CustomerId = student.CustomerId,
+                        BuildingId = student.BuildingId,
+                        BatteryId = student.BatteryId,
+                        ColumnId = student.ColumnId,
+                        ElevatorId = student.ElevatorId,
+                    
+                    });
+                    ctx.SaveChanges();
+                    
+                    
+                }
+
+
+            }
+            catch(Exception e) {
+                    int i =0;
+            }
             return Ok();
         }
 

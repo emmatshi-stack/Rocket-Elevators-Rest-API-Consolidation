@@ -63,7 +63,7 @@ namespace buildingapi.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!AddressesExists(cust.Id))
+                if (!CustomersExists(cust.Id))
                 {
                     return NotFound();
                 }
@@ -76,9 +76,9 @@ namespace buildingapi.Controllers
             return NoContent();
         }
 
-        private bool AddressesExists(long id)
+        private bool CustomersExists(long id)
         {
-            return _context.Elevators.Any(e => e.Id == id);
+            return _context.Customers.Any(e => e.Id == id);
         }
 
         // [HttpGet("{email}")]
@@ -90,7 +90,7 @@ namespace buildingapi.Controllers
             
         // }
 
-        
+            
         
         
         
