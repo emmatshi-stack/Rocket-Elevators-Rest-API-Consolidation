@@ -29,7 +29,6 @@ namespace RocketElevatorsApi.Controllers
 
          // Action that recuperates a given intervention by Id 
         // GET: api/interventions/id
-        //fg
         [HttpGet("{id}")]
         public async Task<ActionResult<Interventions>> GetInterventionById(long id)
         {
@@ -156,6 +155,7 @@ namespace RocketElevatorsApi.Controllers
                     
                     });
                     ctx.SaveChanges();
+                    await _context.SaveChangesAsync();
                     
                     
                 }
