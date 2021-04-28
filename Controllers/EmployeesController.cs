@@ -26,9 +26,9 @@ namespace buildingapi.Controllers
         }
 
         [HttpGet("{email}/{pwd}")]
-        public async Task<ActionResult<Employees>> GetEmployeesByEmail(string email, string pwd)
+        public async Task<ActionResult<Employees>> GetEmployeesByEmail(string email)
         {
-            List<Employees> employees = await _context.Employees.Where(b => b.Email == email && b.User.EncryptedPassword == pwd).ToListAsync();
+            List<Employees> employees = await _context.Employees.Where(b => b.Email == email ).ToListAsync();
             if (employees == null || employees.Count() == 0)
             {
                 return await Task.FromResult(new Employees());

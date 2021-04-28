@@ -32,8 +32,10 @@ namespace buildingapi
 
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
                                 {
-                                    builder.AllowAnyOrigin()
+                                    builder.WithOrigins("https://localhost:5001/employees",
+                                        "http://www.contoso.com")
                                         .AllowAnyMethod()
+                    
                                         .AllowAnyHeader();
                                 }));
 
