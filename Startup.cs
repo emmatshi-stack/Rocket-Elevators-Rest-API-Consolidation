@@ -30,7 +30,12 @@ namespace buildingapi
         {
 
 
- services.AddCors();
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+                                {
+                                    builder.AllowAnyOrigin()
+                                        .AllowAnyMethod()
+                                        .AllowAnyHeader();
+                                }));
 
             services.AddDbContext<emmanueltshibanguContext>(options =>
             options.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));

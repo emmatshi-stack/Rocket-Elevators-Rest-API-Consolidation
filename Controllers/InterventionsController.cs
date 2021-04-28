@@ -126,7 +126,7 @@ namespace RocketElevatorsApi.Controllers
         }
 
        
-
+        
         
         private bool interventionsExists(long id)
         {
@@ -135,40 +135,70 @@ namespace RocketElevatorsApi.Controllers
         [HttpPost]
         public async Task<IActionResult> PostNewStudent([FromBody]Interventions student)
         {
-            try{
-                if (student == null)
-                {
-                    return BadRequest();
-                };
+                var gh = await _context.Interventions.FirstOrDefaultAsync();
+                gh.Reports =  student.Reports;
+                gh.Author = student.Author;
+                gh.CustomerId = student.CustomerId;
+                gh.BuildingId = student.BuildingId;
+                gh.BatteryId = student.BatteryId;
+                gh.ColumnId = student.ColumnId;
+                gh.ElevatorId = student.ElevatorId;
 
-                using (var ctx = new emmanueltshibanguContext())
+
+            try
+            {
+                var kp =gh;
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (1 == 1)
                 {
-                    ctx.Interventions.Add(new Interventions()
-                    {
-                        Reports = student.Reports,
-                        Author = student.Author,
-                        CustomerId = student.CustomerId,
-                        BuildingId = student.BuildingId,
-                        BatteryId = student.BatteryId,
-                        ColumnId = student.ColumnId,
-                        ElevatorId = student.ElevatorId,
-                    
-                    });
-                    ctx.SaveChanges();
-                    await _context.SaveChangesAsync();
-                    
-                    
+                    return NotFound();
                 }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+            
+                // using (var ctx = new emmanueltshibanguContext())
+                // {
+                //     ctx.Interventions.Add(new Interventions()
+                //     {
+                //         .Reports = student.Reports,
+                //         Author = student.Author,
+                //         CustomerId = student.CustomerId,
+                //         BuildingId = student.BuildingId,
+                //         BatteryId = student.BatteryId,
+                //         ColumnId = student.ColumnId,
+                //         ElevatorId = student.ElevatorId,
+                    
+                //     });
+                //     ctx.SaveChanges();
+                    
+                    
+                    
+                // }
 
 
-            }
-            catch(Exception e) {
-                    int i =0;
-            }
-            return Ok();
+            
+            
+
+            
+           
+            
         }
 
-      
-    
+
+
+
     }
+
+
+
+
+
 }
