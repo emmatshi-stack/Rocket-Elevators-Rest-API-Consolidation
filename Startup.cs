@@ -35,7 +35,7 @@ namespace buildingapi
                                     builder.WithOrigins("https://rocketapiem.herokuapp.com/",
                                         "http://www.contoso.com")
                                         .AllowAnyMethod()
-                    
+                                        .AllowAnyOrigin()
                                         .AllowAnyHeader();
                                 }));
 
